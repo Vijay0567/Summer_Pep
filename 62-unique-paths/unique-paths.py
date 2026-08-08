@@ -1,9 +1,5 @@
-class Solution(object):
-    def uniquePaths(self, m, n):
-        dp = [1] * n
+import math
 
-        for _ in range(m - 1):
-            for j in range(1, n):
-                dp[j] += dp[j - 1]
-
-        return dp[-1]
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        return math.comb(m + n - 2, m - 1)
